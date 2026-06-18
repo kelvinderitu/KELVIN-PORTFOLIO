@@ -1,35 +1,89 @@
-import Terminal from "./Terminal";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+} from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-8">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-6 pt-24"
+    >
+      <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
 
-      <div className="max-w-6xl mx-auto text-center">
+        {/* Profile Image */}
 
-        <p className="text-blue-500 text-xl mb-4 tracking-wider uppercase">
-          Welcome to my portfolio
+        <div
+          className="animate-float mb-10"
+          style={{
+            boxShadow:
+              "0 0 120px rgba(0,255,100,.35)",
+            borderRadius: "9999px",
+          }}
+        >
+          <img
+            src="/profile.jpg"
+            alt="Kelvin Nderitu"
+            className="
+              w-[250px]
+              h-[250px]
+              md:w-[380px]
+              md:h-[380px]
+              rounded-full
+              object-cover
+            "
+          />
+        </div>
+
+        {/* Title */}
+
+        <p className="text-green-400 uppercase tracking-[0.4em] text-sm md:text-base mb-6">
+          Software Engineer • DevOps Engineer
         </p>
 
-        <h1 className="text-6xl md:text-8xl font-black leading-tight">
+        <h1 className="text-5xl md:text-7xl xl:text-8xl font-black leading-tight">
           Kelvin
-          <span className="text-blue-500"> Nderitu</span>
+
+          <br />
+
+          <span
+            className="text-green-400"
+            style={{
+              textShadow:
+                "0 0 25px rgba(0,255,100,.7)",
+            }}
+          >
+            Nderitu
+          </span>
         </h1>
 
-        <h2 className="mt-6 text-2xl md:text-4xl text-gray-300 font-semibold">
-          Software Engineer • DevOps Engineer
-        </h2>
+        {/* Description */}
 
-        <p className="mt-8 max-w-3xl mx-auto text-lg text-gray-400 leading-relaxed">
-          Passionate about building scalable software systems,
-          automating infrastructure, deploying cloud-native applications,
-          and solving complex engineering challenges through modern technologies.
+        <p className="mt-8 max-w-3xl text-lg md:text-xl text-gray-300 leading-relaxed">
+          Building scalable software solutions,
+          cloud-native applications, automated
+          infrastructure, CI/CD pipelines, and
+          modern digital experiences that power
+          businesses and communities.
         </p>
+
+        {/* Buttons */}
 
         <div className="flex flex-wrap justify-center gap-4 mt-10">
 
           <a
             href="#projects"
-            className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-xl font-semibold"
+            className="
+              bg-green-500
+              text-black
+              px-8
+              py-4
+              rounded-xl
+              font-semibold
+              hover:scale-105
+              transition
+            "
           >
             View Projects
           </a>
@@ -37,45 +91,90 @@ export default function Hero() {
           <a
             href="/Kelvin_Nderitu_CV.pdf"
             download
-            className="border border-gray-500 hover:border-blue-500 transition px-8 py-4 rounded-xl font-semibold"
+            className="
+              border
+              border-green-400
+              text-green-400
+              px-8
+              py-4
+              rounded-xl
+              font-semibold
+              hover:bg-green-400
+              hover:text-black
+              transition
+            "
           >
             Download CV
           </a>
 
         </div>
 
-        <div className="flex justify-center gap-3 mt-10 flex-wrap">
+        {/* Social Icons */}
 
-          <span className="bg-zinc-900 px-4 py-2 rounded-full">
-            Python
-          </span>
+        <div className="flex justify-center gap-8 mt-10">
 
-          <span className="bg-zinc-900 px-4 py-2 rounded-full">
-            React
-          </span>
+          <a
+            href="https://github.com/kelvinderitu"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-green-400 transition"
+          >
+            <FaGithub size={30} />
+          </a>
 
-          <span className="bg-zinc-900 px-4 py-2 rounded-full">
-            Docker
-          </span>
+          <a
+            href="https://linkedin.com/in/YOUR-LINKEDIN"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-green-400 transition"
+          >
+            <FaLinkedin size={30} />
+          </a>
 
-          <span className="bg-zinc-900 px-4 py-2 rounded-full">
-            Kubernetes
-          </span>
-
-          <span className="bg-zinc-900 px-4 py-2 rounded-full">
-            Linux
-          </span>
-
-          <span className="bg-zinc-900 px-4 py-2 rounded-full">
-            CI/CD
-          </span>
+          <a
+            href="mailto:your-email@example.com"
+            className="hover:text-green-400 transition"
+          >
+            <FaEnvelope size={30} />
+          </a>
 
         </div>
 
-        <Terminal />
+        {/* Tech Stack */}
+
+        <div className="flex flex-wrap justify-center gap-3 mt-10">
+
+          {[
+            "Python",
+            "React",
+            "Docker",
+            "Kubernetes",
+            "Linux",
+            "GitHub Actions",
+            "Oracle Cloud",
+            "SQL",
+          ].map((tech) => (
+            <span
+              key={tech}
+              className="
+                border
+                border-green-500/30
+                bg-black/40
+                px-4
+                py-2
+                rounded-full
+                text-sm
+                hover:border-green-400
+                transition
+              "
+            >
+              {tech}
+            </span>
+          ))}
+
+        </div>
 
       </div>
-
     </section>
   );
 }

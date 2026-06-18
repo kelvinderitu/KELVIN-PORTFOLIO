@@ -9,7 +9,7 @@ export default function Contact() {
       </h2>
 
       <p className="text-gray-400">
-        kelvin@example.com
+        kelvinderitugithenya.com
       </p>
 
       <p className="text-gray-400">

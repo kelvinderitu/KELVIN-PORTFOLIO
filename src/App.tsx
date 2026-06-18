@@ -5,16 +5,17 @@ import Skills from "./components/Skills";
 import Timeline from "./components/Timeline";
 
 import GitHubProjects from "./components/GitHubProjects";
-import GitHubStats from "./components/GitHubStats";
+
 import DevOps from "./components/DevOps";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
+import MatrixBackground from "./components/MatrixBackground";
 
 function App() {
   return (
     <>
+      <MatrixBackground />
       <Navbar />
       <Hero />
       <About />
@@ -22,7 +23,7 @@ function App() {
       <Timeline />
      
       <GitHubProjects />
-      <GitHubStats />
+      
       <DevOps />
       <Certifications />
       <Contact />
